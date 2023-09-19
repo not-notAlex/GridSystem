@@ -1,0 +1,162 @@
+@use '../variables' as v;
+
+.sidebar {
+    width: 25%;
+    height: calc(100vh - 70px); /* Subtracting the navbar's height */
+    background-color: #120a20;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 70px;
+    z-index: 500; /* Adjust as needed, to ensure it's on top of other content but below any fixed navbars/modals etc. */
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.format {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abilities {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-left: 10%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.save-load {
+    width: 50%;
+    position: fixed;
+    bottom: 0;
+}
+
+.form-table {
+    width: 100%;
+}
+
+.form-button {
+    margin-bottom: 15px;
+}
+
+.charTitle {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    box-shadow: 0 0 10px white;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center; 
+}
+
+.stats {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 130px;
+}
+
+.hp {
+    color: v.$vitality;
+    border-bottom: 2px solid v.$vitality;
+}
+
+.sp {
+    color: v.$willpower;
+    border-bottom: 2px solid v.$willpower;
+}
+
+.might {
+    color: v.$might;
+    border-bottom: 2px solid v.$might;
+}
+
+.speed {
+    color: v.$speed;
+    border-bottom: 2px solid v.$speed;
+}
+
+.action {
+    color: v.$action;
+}
+
+.skill {
+    color: v.$skill;
+}
+
+.spell {
+    color: v.$spell;
+}
+
+.talent {
+    color: v.$talent;
+}
+
+.actionCard {
+    background-color: v.$action;
+    border-radius: 25px;
+}
+
+.skillCard {
+    background-color: v.$skill;
+    border-radius: 25px;
+}
+
+.spellCard {
+    background-color: v.$spell;
+    border-radius: 25px;
+}
+
+.talentCard {
+    background-color: v.$talent;
+    border-radius: 25px;
+}
+
+.points {
+    text-decoration: underline;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* scrollbar settings */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #dddddd; 
+}

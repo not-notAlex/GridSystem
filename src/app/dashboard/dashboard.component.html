@@ -1,0 +1,110 @@
+<div class="sidebar">
+    <mat-tab-group>
+        <mat-tab label="Creation">
+            <mat-form-field class="format">
+                <mat-label>Character Name</mat-label>
+                <input matInput [(ngModel)]="toon.name" (ngModelChange)="generateLoadString()">
+            </mat-form-field>
+            <table class="form-table">
+                <tr>
+                    <td>
+                        <mat-form-field class="format">
+                            <mat-label>Number of Nodes</mat-label>
+                            <input matInput disabled="true"
+                                   [(ngModel)]="toon.nodeList.length">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <button mat-raised-button color="primary"
+                                class="form-button"
+                                (click)="undoSelection()">Undo</button>
+                    </td>
+                    <td>
+                        <button mat-raised-button color="primary"
+                                class="form-button"
+                                (click)="resetCharacter()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+            <mat-card class="format" style="color: white;">
+                <mat-card-content>{{ description }}</mat-card-content>
+            </mat-card>
+            <mat-form-field class="save-load">
+                <mat-label>Save/Load String</mat-label>
+                <input matInput [(ngModel)]="saveString">
+                <button mat-raised-button color="primary" (click)="loadFromString(saveString)">Load</button>
+            </mat-form-field>
+        </mat-tab>
+        <mat-tab label="Character Sheet">
+            <div class="charTitle">
+                {{ toon.name }}
+            </div>
+            <div class="stats-container">
+                <div class="stats hp">
+                    HP: {{ toon.hp }}
+                </div>
+                <div class="stats sp">
+                    SP: {{ toon.sp }}
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stats might">
+                    Might {{ toon.might }}
+                </div>
+                <div class="stats speed">
+                    Speed {{ toon.speed }}
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stats action">
+                    Action List:
+                    <ul class="points">
+                        <li *ngFor="let action of toon.actionList">{{ action.name }}</li>
+                    </ul>
+                </div>
+                <div class="stats skill">
+                    Skill List:
+                    <ul class="points">
+                        <li *ngFor="let skill of toon.skillList">{{ skill.name }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stats spell">
+                    Spell List:
+                    <ul class="points">
+                        <li *ngFor="let spell of toon.spellList">{{ spell.name }}</li>
+                    </ul>
+                </div>
+                <div class="stats talent">
+                    Talent List:
+                    <ul class="points">
+                        <li *ngFor="let talent of toon.talentList">{{ talent.name }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="chartData"
+                        [labels]="chartLabels"
+                        [type]="'pie'"
+                        [options]="chartOptions">
+                </canvas>
+            </div>
+        </mat-tab>
+        <mat-tab label="Abilities List">
+            <mat-card *ngFor="let node of toon.actionList" class="abilities">
+                <mat-card-content class="actionCard">{{ node.desc }}</mat-card-content>
+            </mat-card>
+            <mat-card *ngFor="let node of toon.skillList" class="abilities">
+                <mat-card-content class="skillCard">{{ node.desc }}</mat-card-content>
+            </mat-card>
+            <mat-card *ngFor="let node of toon.spellList" class="abilities">
+                <mat-card-content class="spellCard">{{ node.desc }}</mat-card-content>
+            </mat-card>
+            <mat-card *ngFor="let node of toon.talentList" class="abilities">
+                <mat-card-content class="talentCard">{{ node.desc }}</mat-card-content>
+            </mat-card>
+        </mat-tab>
+    </mat-tab-group>
+</div>

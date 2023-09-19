@@ -1,0 +1,33 @@
+<div class="main-content" 
+     [ngStyle]="{ 'background-position': backgroundLeft + 'px ' + backgroundTop + 'px' }">
+    <button *ngFor="let button of buttons"
+            (mousedown)="onMouseDown($event)" 
+            (mouseup)="onMouseUp()" 
+            (mousemove)="onMouseMove($event)"
+            (click)="selectNode(button)"
+            [matTooltip]="button.class"
+            [matTooltipShowDelay]="300"
+            class="draggable grid_button" 
+            [ngClass]="button.class + ' ' + selectedButton(button.id)"
+            [ngStyle]="{ 'top.px': button.top, 'left.px': button.left }">{{ button.label }}</button>
+</div>
+
+<app-dashboard></app-dashboard>
+
+<!-- SVG to draw lines between buttons -->
+<svg width="100%" height="100%"
+     (mousedown)="onMouseDown($event)" 
+     (mouseup)="onMouseUp()" 
+     (mousemove)="onMouseMove($event)"
+     style="position: absolute; top: 0; left: 0; z-index: 1;"
+     *ngFor="let button of buttons; let i = index">
+        <line 
+          *ngFor="let connectionId of buttons[i].connections"
+          [attr.x1]="button.left + 40"
+          [attr.y1]="button.top + 110"
+          [attr.x2]="getButtonLeftById(connectionId) + 40"
+          [attr.y2]="getButtonTopById(connectionId) + 110"
+          stroke="black"
+          stroke-width="3">
+        </line>
+</svg>

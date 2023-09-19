@@ -1,0 +1,70 @@
+@use '../variables' as v;
+
+.main-content {
+    position: absolute;
+    top: 70px; /* Adjust if navbar height is different */
+    left: 0;
+    right: 25%; /* Sidebar width */
+    bottom: 0;
+    overflow: hidden;
+    background-image: url("../../assets/smaller_structured_grid.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.draggable {
+    position: absolute;
+    cursor: pointer;
+}
+
+.grid_button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    z-index: 101;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.selected {
+    box-shadow: 0 0 40px rgb(84, 38, 252);
+}
+
+.grid_button:not(.selected):hover {
+    box-shadow: 0 0 10px black;
+}
+
+.Action {
+    background-color: v.$action;
+}
+
+.Vitality {
+    background-color: v.$vitality;
+}
+
+.Speed {
+    background-color: v.$speed;
+}
+
+.Might {
+    background-color: v.$might;
+}
+
+.Talent {
+    background-color: v.$talent;
+}
+
+.Willpower {
+    background-color: v.$willpower;
+}
+
+.Skill {
+    background-color: v.$skill;
+}
+
+.Spell {
+    background-color: v.$spell;
+}
