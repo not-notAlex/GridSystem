@@ -212,7 +212,7 @@ export const NODE_DATA = [
     { id: 120, top: 574, left: 2133, label: "", class: 'Might', description: '', connections: [119, 140] },
 
     { id: 121, top: 685, left: 16, label: "", class: 'Vitality', description: '', connections: [101, 122] },
-    { id: 122, top: 685, left: 127, label: "Iajutsu", class: 'Action', 
+    { id: 122, top: 685, left: 127, label: "Iaijutsu", class: 'Action', 
       description: 'Iaijutsu: 2 AP; 25 SP. You move in a straight line up to 20 feet in any direction. You cannot pass through any obstacles. You can move through other creatures as long as you end in an empty square. If you take a melee action this turn it can target multiple creatures that were along this line or adjacent to it. Only one attack can be used this way. Cannot be used while prone.', 
       connections: [121, 123] },
     { id: 123, top: 685, left: 238, label: "", class: 'Might', description: '', connections: [103, 122, 143] },
