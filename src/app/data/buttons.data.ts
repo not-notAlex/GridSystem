@@ -190,7 +190,7 @@ export const NODE_DATA = [
     { id: 106, top: 574, left: 574, label: "", class: 'Speed', description: '', connections: [86, 107] },
     { id: 107, top: 574, left: 685, label: "", class: 'Vitality', description: '', connections: [87, 106, 108, 127] },
     { id: 108, top: 574, left: 796, label: "Lead Boots", class: 'Action', 
-      description: 'Lead Boots: 1 AP; 5 SP. Your weight increases five fold until your next turn. This deals 2d6 damage when combined with movement to fall on someone beneath you. While active you cannot make any actions that include High Jump, Burst of Speed, or Iajutsu. While active you cannot be moved by another creature and are considered a sturdy object for the purposes of other actions i.e. Push.', 
+      description: 'Lead Boots: 1 AP; 5 SP. Your weight increases five fold until your next turn. If you fall on a creature while this is active, you deal 2d6 damage per 10 feet. The damage you receive from falling on another creature is reduced by half. While active you cannot make any actions that include High Jump, Burst of Speed, or Iajutsu. While active you cannot be moved by another creature and are considered a sturdy object for the purposes of other actions i.e. Push.', 
       connections: [88, 107] },
     { id: 109, top: 574, left: 907, label: "", class: 'Vitality', description: '', connections: [89, 129] },
     { id: 110, top: 574, left: 1018, label: "Blink", class: 'Action', 
