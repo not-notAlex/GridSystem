@@ -330,7 +330,7 @@ export const NODE_DATA = [
       connections: [168, 187] },
     { id: 189, top: 1018, left: 907, label: "", class: 'Might', description: '', connections: [169, 190] },
     { id: 190, top: 1018, left: 1018, label: "Soul Strike", class: 'Action', 
-      description: 'Soul Strike: 1 AP; 5 SP. Damage you deal this turn is subtracted from the target’s SP rather than their HP. If your target has no remaining SP, it is dealt to their HP as normal. All sources of damage are increased by 2 this turn.', 
+      description: 'Soul Strike: 1 AP; 5 SP. Damage you deal this turn is subtracted from the target’s SP rather than their HP. If your target has no remaining SP, it is dealt to their HP as normal. All sources of damage are increased by 2 this turn and ignore armor.', 
       connections: [170, 189, 191] },
     { id: 191, top: 1018, left: 1130, label: "", class: 'Willpower', description: '', connections: [171, 190, 192] },
     { id: 192, top: 1018, left: 1242, label: "Focus Energy", class: 'Action', 
